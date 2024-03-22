@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #2e522e;
+    --secondary-color: #99c240;
+    --main-background-color: #2e522e;
+    --background-color: #99c240;
+    --link-color: #2e522e;
+    --link-hover-color: #99c240;
+    --link-background: #99c240;
+    --link-hover-background: #2e522e;
+    --main-img-background: url("https://th.bing.com/th/id/R.d0cdb5473a202d118a56b0923eef47fe?rik=n6pk2LHiHerJiA&pid=ImgRaw&r=0");
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a:focus,a:visited,a:active{
+    outline: none;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: var(--main-img-background);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h3, .social-links {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInText 1s ease-in-out forwards;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 36px;
+}
+
+h1 span {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 36px;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-links li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInLinks 1s ease-in-out forwards;
+}
+
+@keyframes fadeInLinks {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-links li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--link-color);
+    background-color: var(--link-background);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--link-hover-background);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.social-links li a:hover::before {
+    width: 100%;
+    height: 250%;
+    opacity: 0;
+}
+
+.social-links li a:hover {
+    background-color: var(--link-hover-color);
+    z-index: 1;
+}
+
+.playstore-button svg {
+    width: 48px;
+    height: auto;
+    z-index: 2;
+}
+
+.playstore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 9999px;
+    background-color: #FFFFFF;
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    color: var(--link-color);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+    width: 220px;
+}
+
+.playstore-button:hover {
+    background-color: #d0d06e;
+    border: 2px solid var(--secondary-color);
+    color: #FFFFFF;
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.text-1 {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.text-2 {
+    font-weight: 600;
+}
+
+  .text-2.Facebook {
+    font-weight: 600;
+    color: #004cff;
+  }
+  .text-2.Instagram {
+    font-weight: 600;
+    color: #e52a84;
+  }
+  .text-2.WhatsApp {
+    font-weight: 600;
+    color: #0bef4f;
+  }
+  .text-2 {
+    font-weight: 600;
+    color: #303030;
+  }
