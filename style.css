@@ -6,6 +6,22 @@
   --avocado-leaf: #2e522e; /* لون ورقة الأفوكادو */
 }
 
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:focus,
+a:visited,
+a:active {
+  outline: none;
+}
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Avocado Loader */
 .avocado-loader {
   position: fixed;

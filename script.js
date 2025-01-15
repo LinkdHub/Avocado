@@ -6,5 +6,5 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       loader.style.display = "none";
     }, 500); // Delay for fade-out effect
-  }, 3000); // 3 seconds
+  }, 2000); // 3 seconds
 });
