@@ -1,235 +1,265 @@
 :root {
-    --primary-color: #2e522e;         /* اللون الأخضر الداكن */
-    --secondary-color: #99c240;       /* اللون الأخضر الفاتح */
-    --avocado-green: #568203;         /* لون جسم الأفوكادو */
-    --avocado-seed: #f4d03f;          /* لون بذرة الأفوكادو */
-    --avocado-leaf: #2e522e;          /* لون ورقة الأفوكادو */
+  --primary-color: #2e522e; /* اللون الأخضر الداكن */
+  --secondary-color: #99c240; /* اللون الأخضر الفاتح */
+  --avocado-green: #568203; /* لون جسم الأفوكادو */
+  --avocado-seed: #f4d03f; /* لون بذرة الأفوكادو */
+  --avocado-leaf: #2e522e; /* لون ورقة الأفوكادو */
 }
 
 /* Avocado Loader */
 .avocado-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
 }
 
 .avocado {
-    position: relative;
-    width: 100px;
-    height: 120px;
-    animation: bounce 2s infinite ease-in-out;
+  position: relative;
+  width: 100px;
+  height: 120px;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 .avocado-body {
-    width: 100px;
-    height: 120px;
-    background: var(--avocado-green);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    position: relative;
-    overflow: hidden;
+  width: 100px;
+  height: 120px;
+  background: var(--avocado-green);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  overflow: hidden;
 }
 
 .avocado-seed {
-    width: 50px;
-    height: 50px;
-    background: var(--avocado-seed);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: rotate 4s infinite linear;
+  width: 50px;
+  height: 50px;
+  background: var(--avocado-seed);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s infinite linear;
 }
 
 .avocado-leaf {
-    width: 40px;
-    height: 20px;
-    background: var(--avocado-leaf);
-    border-radius: 50% 50% 0 0;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: sway 2s infinite ease-in-out;
+  width: 40px;
+  height: 20px;
+  background: var(--avocado-leaf);
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sway 2s infinite ease-in-out;
 }
 
 .loader-text {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    animation: fade 1.5s infinite;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  animation: fade 1.5s infinite;
 }
 
 /* Animations */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes rotate {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes sway {
-    0%, 100% { transform: translateX(-50%) rotate(-10deg); }
-    50% { transform: translateX(-50%) rotate(10deg); }
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(10deg);
+  }
 }
 
 @keyframes fade {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Background Styles */
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    z-index: -1;
-    animation: gradientAnimation 10s infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  z-index: -1;
+  animation: gradientAnimation 10s infinite alternate;
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 /* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow: hidden;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    opacity: 0;
-    animation: fadeIn 1s ease 3s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s ease 3s forwards;
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 h1 {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h1 span {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 h3 {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
 }
 
 .container-logo {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .logo img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 3px solid var(--secondary-color);
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--secondary-color);
 }
 
 .social-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
 .social-links li {
-    display: inline-block;
+  display: inline-block;
 }
 
 .social-button {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--link-color);
-    background: var(--link-background);
-    padding: 15px 25px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--link-color);
+  background: var(--link-background);
+  padding: 15px 25px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-button:hover {
-    background: var(--link-hover-background);
-    color: var(--link-hover-color);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: var(--link-hover-background);
+  color: var(--link-hover-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .social-button i {
-    font-size: 1.5rem;
-    margin-right: 10px;
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 
 .texts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .text-1 {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .text-2 {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h3 {
-        font-size: 1.2rem;
-    }
+  h3 {
+    font-size: 1.2rem;
+  }
 
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .social-links {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    .social-button {
-        padding: 10px 20px;
-    }
+  .social-button {
+    padding: 10px 20px;
+  }
 }
